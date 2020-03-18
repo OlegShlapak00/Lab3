@@ -19,4 +19,5 @@ function pascalSimple(numTiers) {
 }
 document.write("1");
 document.write("<br>");
- pascalSimple(10);
+let result =  pascalSimple(10);
+console.log(result);

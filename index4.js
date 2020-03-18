@@ -7,7 +7,9 @@ var arr = [
 {value: 12, type: 'EUR'},
 {value: 77, type: 'USD'},
 ];
+
 let sum=0,arr1=[];
+
 for(let i=0;i<arr.length;i++){
   if (arr[i].value<100&&arr[i].type=='USD') {
     sum+=arr[i].value;
@@ -16,8 +18,10 @@ for(let i=0;i<arr.length;i++){
     arr1.push(arr[i]);
   }
 }
+
 for(let i=0;i<arr1.length;i++){
   arr[i].value*=2;
 }
+
 alert(sum);
 console.log(arr1);
