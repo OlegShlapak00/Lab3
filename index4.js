@@ -8,20 +8,24 @@ var arr = [
 {value: 77, type: 'USD'},
 ];
 
-let sum=0,arr1=[];
+let arr1=arr.filter(money=>money.type==="USD"&&money.value<100);
 
-for(let i=0;i<arr.length;i++){
-  if (arr[i].value<100&&arr[i].type=='USD') {
-    sum+=arr[i].value;
-  }
-  if(arr[i].type=='EUR'){
-    arr1.push(arr[i]);
-  }
+let sum=arr1.reduce(add_f,0);
+console.log(sum);
+
+function add_f(acc,curVal){
+  return acc+curVal.value;
 }
 
-for(let i=0;i<arr1.length;i++){
-  arr[i].value*=2;
-}
+let arr2=arr.filter(mult_f);
+console.log(arr2)
 
-alert(sum);
-console.log(arr1);
+function mult_f(money){
+  if(money.type==="EUR"){
+    money.value*=2;
+    return true;
+  }
+  else {
+    return false;
+  }
+}
